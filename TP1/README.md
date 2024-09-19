@@ -4,6 +4,6 @@
 ## Autor: Inês Mesquita de Freitas
 
 ### Resumo:
-O TP1 consistiu na realização de dois exercícios:
+O TP1 consistiu na realização de dois exercícios do Blockly Games:
 * Resolver o exercício 10 do Maze;
 * Desenhar com o Turtle uma casa, um sol e uma árvore.
