@@ -18,4 +18,4 @@ O TP4 consistiu na criação de uma aplicação em Python que coloca no monitor 
     
 O utilizador escolhe uma das opções, introduzindo o número correspondente:
 - Se a opção não for sair, a aplicação executa a operação pretendida, apresenta o resultado e a seguir apresenta de novo o menu;
-- Se a opção for sair, a aplicação termina colocando uma mensagem no monitor.
+- Se a opção for sair, a aplicação termina colocando a mensagem "Até à próxima!" no monitor.
