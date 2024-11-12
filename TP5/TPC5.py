@@ -62,8 +62,9 @@ def Remover_Sala(cinema, filme):
 # Definir o Menu
 def Menu():
     cinema = []
+    cond = True
     
-    while True:
+    while cond:
         print(" ------- Gestão de Cinema ------- ")
         print("1. Inserir sala")
         print("2. Listar filmes em exibição")
@@ -111,6 +112,7 @@ def Menu():
             print(f"Sala do filme '{filme}' removida.")
 
         elif opcao == "0":
+            cond = False
             print("Até à próxima!")
 
         else:
