@@ -127,8 +127,9 @@ def Main():
     tabMeteo =[]
     fnome = "meteorologia.txt"
     p = None
+    cond = True
 
-    while True:
+    while cond:
         Menu()
         opcao = input("Introduza uma opção: ")
 
@@ -173,8 +174,9 @@ def Main():
                 print("Insira na tabela os dados necessários para a criação dos gráficos.")
         
         elif opcao == "0":
+            cond = False
             print("Até à próxima!")
-            return
+
 
 tabMeteo = [((2022,1,20), 2, 16, 0),((2022,1,21), 1, 13, 0.2), ((2022,1,22), 7, 17, 0.01)]  
         
