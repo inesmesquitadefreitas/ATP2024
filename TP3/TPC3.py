@@ -1,5 +1,6 @@
 import random
 
+# Definir as Funções
 def computador_joga(fosforos):
     jogada = (fosforos - 1) % 5
     if jogada == 0:
@@ -8,15 +9,11 @@ def computador_joga(fosforos):
     return jogada
 
 def jogador_joga(fosforos):
-    while True:
-        try:
-            jogada = int(input("Quantos fósforos você quer tirar? (1-4): "))
-            if jogada in [1, 2, 3, 4]:
-                return jogada
-            else:
-                print("Jogada inválida. Escolha um número entre 1 e 4.")
-        except ValueError:
-            print("Entrada inválida. Por favor, insira um número entre 1 e 4.")
+    jogada = int(input("Quantos fósforos você quer tirar? (1-4): "))
+    if jogada in [1, 2, 3, 4]:
+        return jogada
+    else:
+        print("Jogada inválida. Escolha um número entre 1 e 4.")
 
 def modo_jogador_primeiro():
     fosforos = 21
@@ -51,12 +48,13 @@ def modo_computador_primeiro():
         if fosforos <= 0:
             print("Você tirou o último fósforo. Perdeu!")
             return
-
+# Definir o Menu do jogo
 def jogo():
     print("Bem-vindo ao jogo dos 21 fósforos!")
     print("Quem tirar o último fósforo perde o jogo.")
+    cond = True
 
-    while True:
+    while cond:
         print("Escolha o modo de jogo (1 ou 2).")
         print("1 - Você começa.")
         print("2 - O computador começa.")
@@ -64,10 +62,10 @@ def jogo():
 
         if modo == '1':
             modo_jogador_primeiro()
-            break
+            cond = False
         elif modo == '2':
             modo_computador_primeiro()
-            break
+            cond = False
         else:
             print("Opção inválida. Tente novamente.")
 
