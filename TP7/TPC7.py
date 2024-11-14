@@ -138,7 +138,7 @@ def Main():
             print(f"Temperaturas médias de cada dia: {resultado}")
 
         elif opcao == "2":
-            Guardar_TabMeteo(t, fnome)
+            Guardar_TabMeteo(tabMeteo, fnome)
             print(f"Tabela guardada em {fnome}")
 
         elif opcao == "3":
