@@ -6,14 +6,12 @@
 lista1 = [1, 2, 3, 4, 5]
 lista2 = [4, 5, 6, 7, 8]
 nao_comuns = [x for x in lista1 if x not in lista2] + [x for x in lista2 if x not in lista1] # lista A + lista B = 1 lista com os elementos das listas A e B
-print (nao_comuns)
 
 
 # Lista formada pelas palavras do texto compostas por mais de 3 letras:
 texto = """Vivia há já não poucos anos algures num concelho do Ribatejo 
     um pequeno lavrador e negociante de gado chamado Manuel Peres Vigário"""
 lista = [x for x in texto.split(" ") if len(x) > 3] 
-print(lista)
 
 # for x in texto.split(" ") --> para cada elemento resultante do split da string (texto) pelo caracter " " (espaço)
 # if len(x) > 3 --> se o comprimento desse elemento > 3
@@ -23,7 +21,6 @@ print(lista)
 # Lista formada por pares do tipo (índice, valor) com os valores da lista dada:
 lista = ['anaconda', 'burro', 'cavalo', 'macaco']
 listaRes = [(i,lista[i]) for i in range(len(lista))]
-print (listaRes)
 
 # for i in range(len(lista)) --> para cada índice desde 0 até (len(lista) - 1)
 # print (i, lista[i]) --> print (índice, elemento da lista correspondente a esse índice)
