@@ -61,30 +61,34 @@ def Remover_Sala(cinema, nomeFilme):
     # slicing com [:] cria uma nova referência à listap (não cria uma nova lista), permitindo substituir o seu conteúdo sem criar uma nova variável
     return cinema
 
-
 # Definir o Menu
 def Menu():
+    print(" ------- Gestão de Cinema ------- ")
+    print("(1) Inserir sala")
+    print("(2) Listar filmes em exibição")
+    print("(3) Verificar se um lugar está disponível")
+    print("(4) Vender bilhete")
+    print("(5) Listar disponibilidades por sala")
+    print("(6) Remover sala")
+    print("(0) Sair")
+    print(" -------------------------------- ")
+
+
+# Definir o Main --> Aplicação
+def Main():
     cinema = []
     cond = True
-    
-    while cond:
-        print(" ------- Gestão de Cinema ------- ")
-        print("1. Inserir sala")
-        print("2. Listar filmes em exibição")
-        print("3. Verificar se um lugar está disponível")
-        print("4. Vender bilhete")
-        print("5. Listar disponibilidades por sala")
-        print("6. Remover sala")
-        print("0. Sair")
-        print(" -------------------------------- ")
-        
+
+    while cond == True:
+        Menu()
         opcao = input("Escolha uma opção: ")
 
         if opcao == "1":
-            filme = input("Insira o nome do filme: ")
-            nlugares = int(input("Insira o valor correspondente ao número de lugares: "))
+            filme = input("Nome do filme: ")
+            nlugares = int(input("Número de lugares: "))
             nova_sala = (nlugares, [], filme)
-            cinema = Inserir_Sala(cinema, nova_sala)
+            Inserir_Sala(cinema, nova_sala)
+            print(f"Sala do filme {filme} adicionada com sucesso!")
 
         elif opcao == "2":
             Listar(cinema)
@@ -101,7 +105,7 @@ def Menu():
             filme = input("Insira o nome do filme: ")
             lugar = int(input("Insira o número do lugar: "))
             if Disponivel(cinema, filme, lugar):
-                cinema = Vende_Bilhete(cinema, filme, lugar)
+                Vende_Bilhete(cinema, filme, lugar)
                 print(f"Bilhete vendido para o lugar {lugar} no filme '{filme}'.")
             else:
                 print(f"Não é possível vender o bilhete. O lugar {lugar} já está ocupado.")
@@ -110,15 +114,15 @@ def Menu():
             Listar_Disponibilidades(cinema)
 
         elif opcao == "6":
-            filme = input("Nome do filme a remover: ")
-            cinema = Remover_Sala(cinema, filme)
-            print(f"Sala do filme '{filme}' removida.")
+            nomeFilme = input("Nome do filme a remover: ")
+            cinema = Remover_Sala(cinema, nomeFilme)
+            print(f"Sala do filme '{nomeFilme}' removida.")
 
         elif opcao == "0":
             cond = False
-            print("Até à próxima!")
-
+            print("Até à próxima...")
+    
         else:
             print("Opção inválida. Tente novamente.")
 
-Menu()
+Main()
