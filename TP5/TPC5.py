@@ -51,12 +51,15 @@ def Listar_Disponibilidades(cinema):
     for sala in cinema:
         nlugares, vendidos, filme = sala
         disponiveis = nlugares - len(vendidos)    
-        print (f"{filme}  |  {disponiveis}    ")
+        print(f"{filme}  |  {disponiveis}")
+    print("------------------------------")
     return cinema
 
 # Remove uma certa sala
-def Remover_Sala(cinema, filme):
-    return[sala for sala in cinema if sala[2] != filme]
+def Remover_Sala(cinema, nomeFilme):
+    cinema[:] = [sala for sala in cinema if sala[2] != nomeFilme]
+    # slicing com [:] cria uma nova referência à listap (não cria uma nova lista), permitindo substituir o seu conteúdo sem criar uma nova variável
+    return cinema
 
 
 # Definir o Menu
@@ -119,5 +122,3 @@ def Menu():
             print("Opção inválida. Tente novamente.")
 
 Menu()
-
-
